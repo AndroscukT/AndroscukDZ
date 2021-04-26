@@ -1,0 +1,38 @@
+﻿<Window x:Class="DZ1.Information"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ1"
+        mc:Ignorable="d"
+        Title="Информация о пользователе" Height="300" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="Image" Source="m.jpg" Grid.Column="0" Margin="20,20,20,87">
+
+        </Image>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="199" Height="70">
+            <Label Margin="0 10 0 5" HorizontalContentAlignment="Right">
+                Логин
+            </Label>
+            <Label HorizontalContentAlignment="Right">
+                Роль
+            </Label>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="199" Height="70">
+            <TextBox Margin="2 14 0 10" x:Name="LoginTB" TextChanged="LoginTB_TextChanged"> login1 </TextBox>
+            <Label x:Name="RoleLabel" HorizontalContentAlignment="Left"> Менеджер </Label>
+        </StackPanel>
+        
+        <Button Grid.Column="1"  Style="{DynamicResource ButtonStyle}" Margin="50 0 50 20" Click="Button_Click">
+            Выйти
+        </Button>
+        <Button Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource ButtonStyle}"  Margin="50 0 50 20" Click="Button_Click_1">
+            Заказы
+        </Button>
+    </Grid>
+</Window>
