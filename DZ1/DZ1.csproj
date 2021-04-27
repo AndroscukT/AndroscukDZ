@@ -35,9 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,10 +68,21 @@
     <Compile Include="CreateSale.xaml.cs">
       <DependentUpon>CreateSale.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Client.cs" />
+    <Compile Include="Entity\DataBaseModel.cs" />
+    <Compile Include="Entity\ListOfProductsInOrder.cs" />
+    <Compile Include="Entity\Orders.cs" />
+    <Compile Include="Entity\Products.cs" />
+    <Compile Include="Entity\UserOfClient.cs" />
+    <Compile Include="Entity\Users.cs" />
+    <Compile Include="Models\UserSingleton.cs" />
+    <Compile Include="OrdersModel.cs" />
     <Compile Include="Sale.xaml.cs">
       <DependentUpon>Sale.xaml</DependentUpon>
     </Compile>
     <Compile Include="SaleClass.cs" />
+    <Compile Include="SaleModel.cs" />
+    <Compile Include="ViewOrderModel.cs" />
     <Page Include="CreateSale.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +133,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

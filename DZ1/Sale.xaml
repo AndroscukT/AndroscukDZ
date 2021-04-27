@@ -6,16 +6,20 @@
         xmlns:local="clr-namespace:DZ1"        
         mc:Ignorable="d"
         Title="Список заказов" Height="300" Width="800">
+   
     <Grid>
-        <ComboBox Name="SComboBox" Width="380" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right">
+        <ComboBox Name="SComboBox" Width="380" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" SelectionChanged="SComboBox_SelectionChanged">
             <TextBlock>Фильтрация по названию заказа</TextBlock>
             <TextBlock>Фильтрация по номеру заказа</TextBlock>
         </ComboBox>
         <DataGrid AutoGenerateColumns="False" Height="270" Width="400" Margin="0 0 0 50" HorizontalAlignment="Left">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Number" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="№" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="LastName" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="FirstName" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                <DataGridTextColumn Header="MiddleName" Binding="{Binding Path=Number}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Kol" Binding="{Binding Path=Kol}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Path=Kol}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
@@ -25,6 +29,6 @@
         <Button x:Name="ExitButton" Content="Назад" Style="{DynamicResource ButtonStyle}"
                 HorizontalAlignment="Right"  Width="350" Click="ExitButton_Click">
         </Button>
-
+       
     </Grid>
 </Window>

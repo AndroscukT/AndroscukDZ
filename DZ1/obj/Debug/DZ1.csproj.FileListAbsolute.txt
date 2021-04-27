@@ -41,3 +41,9 @@ C:\Users\ПК\Desktop\Андрощук\DZ1\obj\Debug\DZ1.pdb
 C:\Users\ПК\Desktop\Андрощук\DZ1\obj\Debug\DZ1.csprojAssemblyReference.cache
 C:\Users\ПК\Desktop\Андрощук\DZ1\obj\Debug\CreateSale.g.cs
 C:\Users\ПК\Desktop\Андрощук\DZ1\obj\Debug\CreateSale.baml
+C:\Users\ПК\Desktop\Андрощук\DZ1\bin\Debug\EntityFramework.dll
+C:\Users\ПК\Desktop\Андрощук\DZ1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ПК\Desktop\Андрощук\DZ1\bin\Debug\EntityFramework.xml
+C:\Users\ПК\Desktop\Андрощук\DZ1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ПК\Desktop\Андрощук\DZ1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\ПК\Desktop\Андрощук\DZ1\obj\Debug\DZ1.csproj.CopyComplete

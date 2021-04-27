@@ -37,5 +37,10 @@ namespace DZ1
             createSale.Show();
             this.Close();
         }
+
+        private void SComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

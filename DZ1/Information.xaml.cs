@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DZ1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,7 +39,7 @@ namespace DZ1
 
         private void LoginTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+           
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

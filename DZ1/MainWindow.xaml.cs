@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DZ1.Entity;
+using DZ1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,16 +32,26 @@ namespace DZ1
             String login = LoginTextBox.Text;
             String password = PasswordBox.Password;
 
-            if (login!= "login1" || password!= "tuptup")
+            try
+            {
+              using (var context=new DataBaseModel())
+                {
+                    var user = context.Users.FirstOrDefault(_user=>(_user.Login == login && _user.Password == password));
+                    if(user != null)
+                    {
+                        UserSingleton.Instance().Login = login;                     
+                        Information information = new Information();
+                        information.Show();
+                        this.Close();
+                    }
+                    else
+                        throw new Exception("");
+                }
+            }
+            catch (Exception)
             {
                 MessageBox.Show("Проверьте введеные вами данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else {
-                
-               Information information = new Information();
-               information.Show();
-               this.Close();
-            }
+            }       
         }
 
         private void LoginTextBox_TextChanged(object sender, TextChangedEventArgs e)
