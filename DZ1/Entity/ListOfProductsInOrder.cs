@@ -21,8 +21,6 @@ namespace DZ1.Entity
 
         public bool? IdDeletid { get; set; }
 
-        public virtual Client Client { get; set; }
-
         public virtual Orders Orders { get; set; }
 
         public virtual Products Products { get; set; }

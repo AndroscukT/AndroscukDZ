@@ -8,7 +8,7 @@ namespace DZ1.Entity
     public partial class DataBaseModel : DbContext
     {
         public DataBaseModel()
-            : base("name=DataBaseModel")
+            : base("name=DataBaseModel1")
         {
         }
 
@@ -22,10 +22,9 @@ namespace DZ1.Entity
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>()
-                .HasMany(e => e.ListOfProductsInOrder)
-                .WithRequired(e => e.Client)
-                .HasForeignKey(e => e.OrderId)
-                .WillCascadeOnDelete(false);
+                .HasMany(e => e.Orders)
+                .WithOptional(e => e.Client)
+                .HasForeignKey(e => e.ClientId);
 
             modelBuilder.Entity<Orders>()
                 .HasMany(e => e.ListOfProductsInOrder)

@@ -12,7 +12,7 @@ namespace DZ1.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Client()
         {
-            ListOfProductsInOrder = new HashSet<ListOfProductsInOrder>();
+            Orders = new HashSet<Orders>();
         }
 
         [Key]
@@ -21,13 +21,11 @@ namespace DZ1.Entity
 
         public int IdUserOfClient { get; set; }
 
-        public int OrderId { get; set; }
-
         public bool? IdDeletid { get; set; }
 
         public virtual UserOfClient UserOfClient { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ListOfProductsInOrder> ListOfProductsInOrder { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

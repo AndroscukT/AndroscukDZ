@@ -11,15 +11,23 @@ namespace DZ1
 {
     public class ViewOrderModel
     {
-        public ObservableCollection<ViewOrderModel> Orders { get; set; }
+        public ObservableCollection<OrdersModel> Orders { get; set; }
+
+        public OrdersModel ordersModel { get; set; }
 
         public ViewOrderModel()
         {
             using (var context = new DataBaseModel())
             {
                 context.Orders.Load();
-                Orders = new ObservableCollection<ViewOrderModel>( (from order in context.Orders.Local select ViewOrderModel.orderVM(order)).ToList());
+                Orders = new ObservableCollection<OrdersModel>();
+                foreach(var item in context.Orders.Local)
+                {
+                    Orders.Add(OrdersModel.FromOrdersModel(item));
+                }
             }
+
+            //(from order in context.Orders.Local select ViewOrderModel.orderVM(order)).ToList()
         }
     }
 }

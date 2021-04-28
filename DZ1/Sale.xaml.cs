@@ -22,6 +22,9 @@ namespace DZ1
         public Sale()
         {
             InitializeComponent();
+
+            DataContext = new ViewOrderModel();
+           
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +43,7 @@ namespace DZ1
 
         private void SComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
     }
 }
