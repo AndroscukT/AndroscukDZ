@@ -68,8 +68,8 @@
     <Compile Include="CreateSale.xaml.cs">
       <DependentUpon>CreateSale.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entity\BaseModel.cs" />
     <Compile Include="Entity\Client.cs" />
-    <Compile Include="Entity\DataBaseModel.cs" />
     <Compile Include="Entity\ListOfProductsInOrder.cs" />
     <Compile Include="Entity\Orders.cs" />
     <Compile Include="Entity\Products.cs" />

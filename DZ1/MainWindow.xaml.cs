@@ -39,8 +39,8 @@ namespace DZ1
                     var user = context.Users.FirstOrDefault(_user=>(_user.Login == login && _user.Password == password));
                     if(user != null)
                     {
-                        UserSingleton.Instance().Login = login;                     
-                        Information information = new Information();
+                        var user1 = context.UserOfClient.FirstOrDefault(_user1 => (_user1.Id == user.IdUsers));
+                        Information information = new Information(user1);
                         information.Show();
                         this.Close();
                     }

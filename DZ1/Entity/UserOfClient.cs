@@ -16,7 +16,7 @@ namespace DZ1.Entity
             Users = new HashSet<Users>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]

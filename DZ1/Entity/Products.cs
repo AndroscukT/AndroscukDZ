@@ -14,7 +14,7 @@ namespace DZ1.Entity
             ListOfProductsInOrder = new HashSet<ListOfProductsInOrder>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]

@@ -17,18 +17,18 @@ namespace DZ1
         public int Amount { get; set; }
 
 
-        public static OrdersModel FromOrdersModel(Entity.Orders context)
+        public static OrdersModel FromOrdersModel(Entity.Orders contextOrder)
         {
             var database = new Entity.DataBaseModel();
                 return new OrdersModel
                 {
-                    Id = context.Id,
-                    OrderName = context.OrderName,
-                    FirstName = context.Client.UserOfClient.FirstName,
-                    LastName = context.Client.UserOfClient.LastName,
-                    MiddleName = context.Client.UserOfClient.MiddleName,
-                    Price = context.ListOfProductsInOrder.Where (o => o.OrderId == context.Id).Select (o => o.Products).Sum(p => p.Price),
-                    Amount = context.ListOfProductsInOrder.Where(o=>o.OrderId==context.Id).Select(o=>o.Products).Count()
+                    Id = contextOrder.Id,
+                    OrderName = contextOrder.OrderName,
+                    FirstName = contextOrder.Client.FirstOrDefault(_client=>(_client.OrderId == contextOrder.Id)).UserOfClient.FirstName,
+                    LastName = contextOrder.Client.FirstOrDefault(_client => (_client.OrderId == contextOrder.Id)).UserOfClient.LastName,
+                    MiddleName = contextOrder.Client.FirstOrDefault(_client => (_client.OrderId == contextOrder.Id)).UserOfClient.MiddleName,
+                    Price = contextOrder.ListOfProductsInOrder.Where (o => o.OrderId == contextOrder.Id).Select (o => o.Products).Sum(p => p.Price),
+                    Amount = contextOrder.ListOfProductsInOrder.Where(o=>o.OrderId== contextOrder.Id).Select(o=>o.Products).Count()
                 };
             //var orderVM = new OrdersModel();
             //orderVM.Id = context.Id;

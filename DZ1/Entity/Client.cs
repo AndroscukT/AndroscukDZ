@@ -9,23 +9,18 @@ namespace DZ1.Entity
     [Table("Client")]
     public partial class Client
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Client()
-        {
-            Orders = new HashSet<Orders>();
-        }
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdClient { get; set; }
 
         public int IdUserOfClient { get; set; }
 
+        public int OrderId { get; set; }
+
         public bool? IdDeletid { get; set; }
 
-        public virtual UserOfClient UserOfClient { get; set; }
+        public virtual Orders Orders { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual UserOfClient UserOfClient { get; set; }
     }
 }

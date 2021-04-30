@@ -1,4 +1,5 @@
-﻿using DZ1.Models;
+﻿using DZ1.Entity;
+using DZ1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace DZ1
         public Information()
         {
             InitializeComponent();
+        }
+        public Information(UserOfClient user)
+        {
+            InitializeComponent();
+            LoginTB.Text = user.LastName;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

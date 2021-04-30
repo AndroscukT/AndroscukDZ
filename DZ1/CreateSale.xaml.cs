@@ -30,5 +30,47 @@ namespace DZ1
             sale.Show();
             this.Close();
         }
+
+        private void SaleCreateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            using (var context = new Entity.DataBaseModel())
+            {
+                try
+                {
+                    if (CreateKolSale.Text == "" || CreateNumberSale.Text == "" || CreateNameSale.Text == "" || CreatePraceSale.Text == "" || CreateNameUserSale.Text == "" || CreateLastNameUserSale.Text == "" || CreateMiddleNameSale.Text == "")
+                    {
+                        new Exception();
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Проверьте данные");
+                    return;
+                }
+
+                context.UserOfClient.Add(
+                    new Entity.UserOfClient()
+                    {
+                        
+                        FirstName = CreateNameUserSale.Text,
+                        LastName = CreateLastNameUserSale.Text,
+                        MiddleName = CreateMiddleNameSale.Text
+                    });
+                context.SaveChanges();
+                context.Products.Add(
+                new Entity.Products()
+                {
+                    
+                    Price = Convert.ToDecimal(CreatePraceSale.Text),
+                    Name = CreateNameSale.Text
+                });
+                context.SaveChanges();
+
+                
+            }
+        }
     }
 }
+
