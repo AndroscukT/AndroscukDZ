@@ -1,0 +1,40 @@
+﻿<Window x:Class="DZ1.Sale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ1"        
+        mc:Ignorable="d"
+        Title="Список заказов" Height="300" Width="800">
+
+
+    <Grid>
+        <ComboBox Name="SComboBox" Width="380" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" SelectionChanged="SComboBox_SelectionChanged">
+            <TextBlock x:Name="FNameSale">Фильтрация по названию заказа</TextBlock>
+            <TextBlock x:Name="FNumberSale">Фильтрация по номеру заказа</TextBlock>
+        </ComboBox>
+        <DataGrid 
+            ItemsSource="{Binding Orders}"
+            SelectedItem="{Binding ordersModel}"
+            AutoGenerateColumns="False" 
+            Height="270" Width="400" 
+            Margin="0 0 0 50" HorizontalAlignment="Left">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="LastName" Binding="{Binding Path=LastName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="FirstName" Binding="{Binding Path=FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="MiddleName" Binding="{Binding Path=MiddleName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=OrderName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="CreateButton" Content="Новый заказ" Style="{DynamicResource ButtonStyle}"
+                HorizontalAlignment="Right" VerticalAlignment="Center"  Width="350" Click="CreateButton_Click">
+        </Button>
+        <Button x:Name="ExitButton" Content="Назад" Style="{DynamicResource ButtonStyle}"
+                HorizontalAlignment="Right"  Width="350" Click="ExitButton_Click">
+        </Button>
+       
+    </Grid>
+</Window>
